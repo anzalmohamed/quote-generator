@@ -1,12 +1,14 @@
-// fetch("https://api.quotable.io/random")
-//   .then(response => response.json())
-//   .then(data => console.log(data))
-//   .catch(error => console.error("Error:", error));
-
+ const quote = document.getElementById("quote");
+const author =document.getElementById("author");
 const api_url= "https://api.quotable.io/random";
-async function getQuote(url) {
+async function getquote(url) {
     const response = await fetch(url);
     var data =await response.json();
-    console.log(data);
+    // console.log(data);
+    quote.innerHTML= data.content;
+    author.innerHTML = data.author;
 }
-getQuote(api_url);
+getquote(api_url);
+
+
+
